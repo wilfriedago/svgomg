@@ -68,7 +68,7 @@ const buildConfig = {
 };
 
 const readJSON = async (filePath) => {
-  const content = await fs.readFile(filePath, 'utf-8');
+  const content = await fs.readFile(filePath, 'utf8');
   return JSON.parse(content);
 };
 
@@ -99,7 +99,7 @@ async function html() {
   const [config, changelog, headCSS] = await Promise.all([
     readJSON(path.join(__dirname, 'src', 'config.json')),
     readJSON(path.join(__dirname, 'src', 'changelog.json')),
-    fs.readFile(path.join(__dirname, 'build', 'head.css'), 'utf-8'),
+    fs.readFile(path.join(__dirname, 'build', 'head.css'), 'utf8'),
   ]);
 
   return gulp
